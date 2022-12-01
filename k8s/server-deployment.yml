@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: server
-          image: loserforever/learn-k8s
+          image: loserforever/learn-k8s-server
           ports:
             - containerPort: 4000
           env:
