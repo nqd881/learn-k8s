@@ -16,5 +16,6 @@ before_install:
   - source $HOME/google-cloud-sdk/path.bash.inc
   - gcloud components update kubectl
   - gcloud version
+  - gcloud auth activate-service-account --key-file gcloud-service-account.json
 install: true
 script: true
