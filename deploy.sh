@@ -1,4 +1,4 @@
-docker build -t loserforever/learn-k8s-server:latest - loserforever/learn-k8s-server:$SHA -f Dockerfile ./
+docker build -t loserforever/learn-k8s-server:latest -t loserforever/learn-k8s-server:$SHA -f Dockerfile ./
 
 docker push loserforever/learn-k8s-server:latest
 docker push loserforever/learn-k8s-server:$SHA
