@@ -1,0 +1,3 @@
+node_modules
+dist
+gcloud-service-account.json
