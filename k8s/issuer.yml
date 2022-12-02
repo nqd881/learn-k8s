@@ -9,10 +9,6 @@ spec:
     privateSecretKeyRef:
       name: letsencrypt-prod
     solvers:
-      selector:
-        dnsNames:
-          - learnk8s.tech
-          - www.learnk8s.tech
-      http01:
-        ingress:
-          class: nginx
+      - http01:
+          ingress:
+            class: nginx
