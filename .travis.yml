@@ -15,9 +15,9 @@ before_install:
 
   - if [ ! d $HOME/google-cloud-sdk/bin ]; then
     rm -rf $HOME/google-cloud-sdk;
-    curl -O https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-cli-410.0.0-linux-x86_64.tar.gz
-    tar -xf google-cloud-cli-410.0.0-linux-x86_64.tar.gz
-    ./google-cloud-sdk/install.sh
+    curl -O https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-cli-410.0.0-linux-x86_64.tar.gz;
+    tar -xf google-cloud-cli-410.0.0-linux-x86_64.tar.gz;
+    ./google-cloud-sdk/install.sh;
     fi
 
   - gcloud component install kubectl
