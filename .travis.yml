@@ -20,7 +20,7 @@ before_install:
     ./google-cloud-sdk/install.sh;
     fi
 
-  - gcloud component install kubectl
+  - gcloud components install kubectl
   - gcloud version
   - gcloud auth activate service-account --key-file gcloud-service-account.json
   - gcloud config set project learn-k8s-370203
