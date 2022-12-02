@@ -35,7 +35,7 @@ const redis = new Redis(
 );
 
 app.get("/", (req, res) => {
-  return res.send(buildResult("WELCOME TO TEST API SERVER ON AWS EKS"));
+  return res.send(buildResult("WELCOME TO TEST API SERVER"));
 });
 
 app.get("/tasks/increment", async (req, res) => {

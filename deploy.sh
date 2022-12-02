@@ -5,3 +5,7 @@ docker push loserforever/learn-k8s-server:$SHA
 
 kubectl apply -f ./k8s
 kubectl set image deployment/server-deployment server=loserforever/learn-k8s-server:$SHA
+
+kubectl get pods
+
+kubectl get svc
