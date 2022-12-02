@@ -1,0 +1,20 @@
+apiVersion: certmanager.k8s.io/v1alpha1
+kind: Certificate
+metadata:
+  name: learn-k8s-tech-tls
+spec:
+  secretName: learn-k8s-tech
+  issuerRef:
+    name: letsencrypt-prod
+    kind: ClusterIssuer
+  commonName: learnk8s.tech
+  dnsNames:
+    - learnk8s.tech
+    - www.learnk8s.tech
+  acme:
+    config:
+      - http01:
+          ingressClass: nginx
+        domains:
+          - learnk8s.tech
+          - www.learnk8s.tech
