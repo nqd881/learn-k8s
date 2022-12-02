@@ -6,7 +6,6 @@ spec:
   secretName: learn-k8s-tech
   issuerRef:
     name: letsencrypt-prod
-    kind: ClusterIssuer
   dnsNames:
     - learnk8s.tech
     - www.learnk8s.tech
