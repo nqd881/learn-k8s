@@ -20,13 +20,12 @@ before_install:
     ./google-cloud-sdk/install.sh
     fi
 
-  # - source $HOME/google-cloud-sdk/path.bash.inc
-    - gcloud component install kubectl
-    - gcloud version
-    - gcloud auth activate service-account --key-file gcloud-service-account.json
-    - gcloud config set project learn-k8s-370203
-    - gcloud config set compute/zone asia-southeast1-a
-    - gcloud container clusters get-credentials learn-k8s-cluster
+  - gcloud component install kubectl
+  - gcloud version
+  - gcloud auth activate service-account --key-file gcloud-service-account.json
+  - gcloud config set project learn-k8s-370203
+  - gcloud config set compute/zone asia-southeast1-a
+  - gcloud container clusters get-credentials learn-k8s-cluster
 
   # - if [ ! -d $HOME/google-cloud-sdk/bin ]; then
   #   rm -rf $HOME/google-cloud-sdk;
