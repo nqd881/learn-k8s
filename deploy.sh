@@ -3,6 +3,8 @@ docker build -t loserforever/learn-k8s-server:latest -t loserforever/learn-k8s-s
 docker push loserforever/learn-k8s-server:latest
 docker push loserforever/learn-k8s-server:$SHA
 
-kubectl delete -f ./k8s
-kubectl apply -f ./k8s
+cd k8s
+
+kubectl delete -f app -f letsencrypt -f ingress
+kubectl apply -f app -f letsencrypt -f ingress
 kubectl set image deployment/server-deployment server=loserforever/learn-k8s-server:$SHA

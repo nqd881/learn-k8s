@@ -1,0 +1,14 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: learnk8s-cert
+  namespace: default
+spec:
+  dnsNames:
+    - learnk8s.tech
+    - www.learnk8s.tech
+    - api.learnk8s.tech
+  secretName: learnk8s-tls-secret
+  issuerRef:
+    name: letsencrypt-cluster-issuer
+    kind: ClusterIssuer

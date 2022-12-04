@@ -1,0 +1,49 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ingress-service
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-cluster-issuer
+spec:
+  ingressClassName: nginx
+  tls:
+    - hosts:
+        - learnk8s.tech
+        - api.learnk8s.tech
+      secretName: learnk8s-tls-secret
+  rules:
+    - host: api.learnk8s.tech
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: server-cluster-ip-service
+                port:
+                  number: 6000
+---
+# apiVersion: networking.k8s.io/v1
+# kind: Ingress
+# metadata:
+#   name: ingress-service
+#   annotations:
+#     nginx.ingress.kubernetes.io/rewrite-target: /$1
+#     cert-manager.io/cluster-issuer: letsencrypt-cluster-issuer
+# spec:
+#   ingressClassName: nginx
+#   tls:
+#     - hosts:
+#         - learnk8s.tech
+#       secretName: learnk8s-tls-secret
+#   rules:
+#     - host: learnk8s.tech
+#       http:
+#         paths:
+#           - path: /api/?(.*)
+#             pathType: Prefix
+#             backend:
+#               service:
+#                 name: server-cluster-ip-service
+#                 port:
+#                   number: 6000
